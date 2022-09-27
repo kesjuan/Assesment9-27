@@ -5,8 +5,18 @@ import java.util.Comparator;
 public class ShopApp  {
 
     public static double calcTotal(Clothing[] clothingArray){
-        return 0.0;
+        double finalPrice = 0.0;
+        for(int x = 0; x < clothingArray.length; x++) {
+            finalPrice += clothingArray[x].getPrice();
+        }
+
+
+
+//        System.out.println(finalPrice);
+        return finalPrice;
     }
+
+
     public static boolean isAFit(Customer customer, Clothing clothing){
         boolean answer = true;
         if (customer.getSize() == clothing.getSize()){
@@ -18,7 +28,7 @@ public class ShopApp  {
     }
     public static void addClothingByPrice(Clothing[] clothingArray){
 
-      // need to figure out why it is not getting price
+
        double finalPrice = 0.0;
         for(int x = 0; x < clothingArray.length; x++) {
             finalPrice += clothingArray[x].getPrice();
@@ -63,7 +73,7 @@ public static Comparator<Clothing> clothingComparator = new Comparator<Clothing>
         double finalPrice = 0.0;
         for(int x = 0; x < discountables.length; x++){
           discount =  discountables[x].calcDiscount(clothing);
-          finalPrice = clothing.getPrice() - discount;
+         // finalPrice = clothing.getPrice() - discount;
 
         }
         System.out.println(discount);

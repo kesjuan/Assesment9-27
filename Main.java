@@ -12,13 +12,14 @@ public class Main {
 
         Clothing []  managerCart = {jeans,tShirt,buttonUp};
 
-        System.out.println(pants.getPrice());
+
         Manager manager1 = new Manager(managerCart, 'L', "Jared");
         Clothing[] employeeCart = {jeans,tShirt,buttonUp};
 
         HourlyEmployee employee1 = new HourlyEmployee(employeeCart, 'L', "Bob");
-        ShopApp.addClothingByPrice(managerCart);
-        ;
+
+        System.out.println(ShopApp.calcTotal(managerCart));
+
         System.out.println(ShopApp.isAFit(manager1, pants));
         Discountable[] discountables = {employee1};
         Discountable[] discountables1 = {manager1};
